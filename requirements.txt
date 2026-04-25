@@ -1,0 +1,6 @@
+plotly==5.19.0
+pandas==2.2.1
+google-auth==2.28.1
+pypdf==4.0.1
+google-generativeai
+flask

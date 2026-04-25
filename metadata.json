@@ -1,0 +1,7 @@
+{
+  "name": "PIPA Voice AI - Fluência Leitora",
+  "description": "Sistema de Gestão de Fluência Leitora com Inteligência Artificial para análise pedagógica.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

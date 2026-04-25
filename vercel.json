@@ -1,0 +1,51 @@
+{
+  "version": 2,
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/api/auth/(.*)",
+      "destination": "/server.ts"
+    },
+    {
+      "source": "/api/gemini/analyze",
+      "destination": "/api/gemini.py"
+    },
+    {
+      "source": "/api/gemini/class_analysis",
+      "destination": "/api/gemini.py"
+    },
+    {
+      "source": "/api/gemini/detect_early_pattern",
+      "destination": "/api/gemini.py"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/server.ts"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/server.ts"
+    }
+  ],
+  "functions": {
+    "api/gemini.py": {
+      "runtime": "@vercel/python@3.11.0",
+      "memory": 1024,
+      "maxDuration": 10
+    },
+    "server.ts": {
+      "runtime": "@vercel/node@18.x"
+    }
+  },
+  "outputDirectory": "dist",
+  "env": {
+    "PYTHON_VERSION": "3.11.x",
+    "GOOGLE_CLIENT_ID": "@google_client_id",
+    "GOOGLE_CLIENT_SECRET": "@google_client_secret",
+    "APP_URL": "@app_url",
+    "GEMINI_API_KEY": "@gemini_api_key"
+  }
+}
